@@ -26,4 +26,19 @@ public class UserService {
         if (user.getPassword().equals(password)) return true;
         return false;
     }
+
+    public boolean isBoss(User user){
+        if(user.getType() == 1){
+            return true;
+        }
+        else return false;
+    }
+
+    public int insertUser(User user){
+        return userDAO.insertUser(user);
+    }
+
+    public int updateType(int id,int type){
+        return userDAO.updateType(id,type);
+    }
 }
