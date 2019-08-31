@@ -9,8 +9,22 @@
 <body>
     <div align="center">
         <h1>浩宇</h1>
-        <form>
-
+        <form action="##" onsubmit="return false" method="post" id="form2">
+            手机号:<br>
+            <input type="text" name="telnum"><br>
+            称呼:<br>
+            <input type="text" name="name"><br>
+            性别:<br>
+            <input type="text" list="data-list">
+            <datalist id="data-list">
+                <option>男</option>
+                <option>女</option>
+            </datalist>
+            密码:<br>
+            <input type="password" name="pass" id="input1"><br>
+            确认密码:<br>
+            <input type="password" name="passagain" id="input2" onblur="checkRegister()"><br><br>
+            <input type="button" value="提交" onclick="registerDo()" >
         </form>
     </div>
 </body>

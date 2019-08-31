@@ -1,5 +1,6 @@
 package com.ncoo.demo.controller;
 
+import com.ncoo.demo.model.User;
 import com.ncoo.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2019/8/29 17:31
  */
 
+
 @Controller
 public class IndexController {
 
@@ -27,17 +29,17 @@ public class IndexController {
         return "index/index";
     }
 
-    @RequestMapping(path = "/login", method = RequestMethod.GET)
-    public String login() {
-        return "login/login";
+    @RequestMapping(path = "/login/do2", method = RequestMethod.GET)
+    public String loginDo2(Model model, HttpServletRequest request) {
+        String tel = request.getParameter("tel");
+        User user = userService.selectUserByTel(tel);
+        String name = user.getName();
+        model.addAttribute("name", name);
+        return "ncoo/index";
     }
 
-    @RequestMapping(path = "/login/do", method = RequestMethod.POST)
-    public String loginDo(Model model, HttpServletRequest request) {
-        String tel = request.getParameter("tel");
-        String password = request.getParameter("password");
-        if (userService.isTrueUser(tel, password));
+    @RequestMapping(path = "register/do2", method = RequestMethod.GET)
+    public String registerDo2() {
         return "index/index";
-
     }
 }

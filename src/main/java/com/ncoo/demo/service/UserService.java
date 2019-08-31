@@ -27,18 +27,24 @@ public class UserService {
         return false;
     }
 
-    public boolean isBoss(User user){
-        if(user.getType() == 1){
+    public boolean isBoss(User user) {
+        if (user.getType() == 1) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
-    public int insertUser(User user){
+    public int insertUser(User user) {
         return userDAO.insertUser(user);
     }
 
-    public int updateType(int id,int type){
-        return userDAO.updateType(id,type);
+    public int updateType(int id, int type) {
+        return userDAO.updateType(id, type);
+    }
+
+    public boolean isTelExist(String tel) {
+        User user = userDAO.selectUserByTel(tel);
+        if (user != null)
+            return true;
+        return false;
     }
 }
