@@ -1,5 +1,7 @@
 package com.ncoo.demo.model;
 
+import com.ncoo.demo.enums.GoodsEnum;
+
 /**
  * @Description:
  * @Author: gaohl
@@ -11,6 +13,26 @@ public class Goods {
     private String name;
 
     private String price;
+
+    private GoodsEnum type;
+
+    private String typeValue;
+
+    private int popular;
+
+    private int recommend;
+
+    public int getPopular() {
+        return popular;
+    }
+
+    public void setPopular(int popular) {
+        this.popular = popular;
+    }
+
+    public void setRecommend(int recommend) {
+        this.recommend = recommend;
+    }
 
     public int getId() {
         return id;
@@ -37,12 +59,15 @@ public class Goods {
     }
 
     public String getType() {
-        return type;
+        return type.getValue();
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(GoodsEnum goodsEnum) {
+
+        this.type = goodsEnum;
     }
 
-    private String type;
+    public int getRecommend() {
+        return recommend;
+    }
 }
