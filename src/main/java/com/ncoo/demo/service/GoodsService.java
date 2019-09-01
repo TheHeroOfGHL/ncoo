@@ -4,6 +4,8 @@ import com.ncoo.demo.dao.GoodsDAO;
 import com.ncoo.demo.model.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 /**
  * @Description:
  * @Author: gaohl
@@ -22,7 +24,7 @@ public class GoodsService {
         return goodsDAO.selectByRecommend(recommend);
     }
 
-    public Goods selectAll(){
+    public List<Goods> selectAll(){
         return goodsDAO.selectAll();
     }
 }
