@@ -14,9 +14,7 @@ public class Goods {
 
     private String price;
 
-    private GoodsEnum type;
-
-    private String typeValue;
+    private String type;
 
     private int popular;
 
@@ -59,12 +57,11 @@ public class Goods {
     }
 
     public String getType() {
-        return type.getValue();
+        return type;
     }
 
-    public void setType(GoodsEnum goodsEnum) {
-
-        this.type = goodsEnum;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getRecommend() {

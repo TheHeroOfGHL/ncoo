@@ -4,6 +4,8 @@ import com.ncoo.demo.model.Goods;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 /**
  * @Description:
  * @Author: gaohl
@@ -16,6 +18,7 @@ public interface GoodsDAO {
 
     @Select({"select * from goods where recommend = #{recommend}"})
     Goods selectByRecommend(int recommend);
+
     @Select({"select * from goods"})
-    Goods selectAll();
+    List<Goods> selectAll();
 }
